@@ -56,7 +56,7 @@ export default function Landing() {
             <button onClick={() => navigate('/dashboard')} className="w-full flex items-center gap-3 px-3 py-2.5 bg-surface-container-high text-primary font-bold border-r-4 border-primary transition-colors">
               <LayoutDashboard size={18} /> <span className="text-xs uppercase tracking-wider">Dashboard</span>
             </button>
-            <button className="w-full flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors">
+            <button onClick={() => navigate('/search')} className="w-full flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors">
               <Globe size={18} /> <span className="text-xs uppercase tracking-wider">Search Tenders</span>
             </button>
           </nav>

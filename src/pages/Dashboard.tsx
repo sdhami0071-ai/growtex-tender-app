@@ -50,9 +50,9 @@ export default function Dashboard() {
           </button>
         </div>
         <nav className="flex-1 space-y-1 pr-4 pb-6 overflow-y-auto">
-          <a href="#" className="flex items-center gap-3 px-6 py-3 bg-[#e1e3e1] text-primary font-bold rounded-r-md"><Compass className="w-5 h-5 fill-primary" /> Discovery</a>
-          <a href="#" className="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-[#e1e3e1]/50 transition-all font-medium"><Gavel className="w-5 h-5" /> Bidding Tools</a>
-          <a href="#" className="flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-[#e1e3e1]/50 transition-all font-medium"><FileText className="w-5 h-5" /> My Tenders</a>
+          <button className="w-full flex items-center gap-3 px-6 py-3 bg-[#e1e3e1] text-primary font-bold rounded-r-md"><Compass className="w-5 h-5 fill-primary" /> Dashboard</button>
+          <button onClick={() => navigate('/search')} className="w-full flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-[#e1e3e1]/50 transition-all font-medium"><Search className="w-5 h-5" /> Search Tenders</button>
+          <button className="w-full flex items-center gap-3 px-6 py-3 text-on-surface-variant hover:bg-[#e1e3e1]/50 transition-all font-medium"><FileText className="w-5 h-5" /> My Tenders</button>
         </nav>
         
         <div className="p-4 border-t border-outline-variant/20 mt-auto">
@@ -171,7 +171,7 @@ export default function Dashboard() {
                       <td className="px-4 md:px-6 py-3 md:py-4 font-bold text-primary text-xs md:text-sm">{t.value}</td>
                       <td className="px-4 md:px-6 py-3 md:py-4 text-[11px] md:text-xs text-on-surface-variant font-medium">{t.deadline}</td>
                       <td className="px-4 md:px-6 py-3 md:py-4 text-right">
-                        <button className="text-[10px] md:text-xs font-bold bg-primary/10 text-primary px-3 py-1.5 md:px-4 md:py-2 rounded-lg hover:bg-primary hover:text-white transition-colors">
+                        <button onClick={() => navigate(`/tender/${t.id}`)} className={`text-[10px] md:text-xs font-bold px-3 py-1.5 md:px-4 md:py-2 rounded-lg transition-colors ${idx === 0 ? 'bg-primary text-white hover:bg-primary/90' : 'bg-surface-container-high text-on-surface-variant hover:bg-outline-variant/50'}`}>
                           View Details
                         </button>
                       </td>
