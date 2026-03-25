@@ -1,7 +1,7 @@
 import { 
   Globe, Search, ArrowRight, LayoutDashboard, 
   Activity, Clock, Archive, PieChart, Building2, 
-  Award, Users, MapPin, Grid, Lock
+  Award, Users, MapPin, Grid, Lock, Mail
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -73,8 +73,19 @@ export default function Landing() {
 
       {/* Main Content */}
       <main className="md:ml-64 mt-16 p-4 md:p-8 min-h-screen bg-[#fcfdfa]">
-        <div className="max-w-7xl mx-auto space-y-10 md:space-y-12">
+        <div className="max-w-7xl mx-auto space-y-8 md:space-y-10">
           
+          {/* Free Trial Banner */}
+          <div className="bg-secondary-container/40 border border-secondary-container/60 rounded-xl p-3 md:p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm w-full mt-2">
+            <div className="flex items-center gap-3 text-on-secondary-container font-medium text-sm sm:text-base">
+              <Mail className="w-5 h-5 text-secondary shrink-0" />
+              <span>Only curious? Unlock <strong>1-Month Premium Free Trial Plan!</strong></span>
+            </div>
+            <button onClick={() => navigate('/signup')} className="w-full sm:w-auto bg-white text-secondary font-bold px-6 py-2.5 rounded-lg text-sm border border-secondary/20 hover:bg-secondary hover:text-white transition-colors shadow-sm whitespace-nowrap">
+              Start now
+            </button>
+          </div>
+
           {/* Header Area */}
           <div className="pt-2 md:pt-4">
             <h1 className="font-headline text-3xl md:text-4xl font-extrabold text-primary mb-3">Global Trade Ledger</h1>
