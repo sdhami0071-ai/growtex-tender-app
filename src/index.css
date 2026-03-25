@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #004324;
+  --color-primary-container: #1a5c38;
+  --color-on-primary: #ffffff;
+  --color-secondary: #186c42;
+  --color-secondary-container: #a4f4bf;
+  --color-on-secondary-container: #217248;
+  --color-tertiary: #4d3500;
+  --color-tertiary-container: #6a4b00;
+  --color-on-tertiary-container: #f3ba45;
+  --color-background: #f9faf8;
+  --color-surface: #f9faf8;
+  --color-surface-container: #edeeec;
+  --color-surface-container-low: #f3f4f2;
+  --color-surface-container-high: #e7e8e6;
+  --color-surface-container-highest: #e1e3e1;
+  --color-on-surface: #191c1b;
+  --color-on-surface-variant: #404941;
+  --color-outline: #707971;
+  --color-outline-variant: #c0c9bf;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+body {
+  @apply bg-background text-on-surface font-body overflow-x-hidden;
+}
+
+h1, h2, h3, h4, .font-headline {
+  @apply font-headline;
+}
+
+.glass-modal {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+}
+
+.blur-text { filter: blur(4px); user-select: none; }
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #004324; }
+
+.ledger-input {
+  @apply w-full bg-transparent border-b border-outline/30 focus:border-primary px-0 py-2 text-on-surface placeholder:text-outline/50 font-medium transition-colors outline-none;
+}
+
+.checkmark-animation {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  animation: drawCheck 0.6s ease-out 0.4s forwards;
+}
+
+@keyframes drawCheck {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
